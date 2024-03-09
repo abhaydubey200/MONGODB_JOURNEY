@@ -42,6 +42,10 @@
 2..$regex: Selects documents where values match a specified regular expression.....true
 ------db.collection.find({ field: { $regex: /pattern/ } })-------
 
+
+
+1..counting query.....
+2..sorting query.....
 */
 
 
@@ -204,10 +208,13 @@ const createStudents = async () => {
         console.log("Students with names of four characters:", studentsWithFourCharacterNames);
         2=>$size...
         // Query using $size
+          */
+       
+
         const studentsWithFiveSubjects = await Product.find({ subjects: { $size: 5 } });
         console.log("Students with five subjects:", studentsWithFiveSubjects);
-        */
-
+      
+         
     } catch (error) {
         console.error("Error inserting student data:", error);
     }
